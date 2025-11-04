@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abhay | Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #0d0d0d;
+      color: #f5f5f5;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    /* ===== NAVBAR ===== */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 40px;
+      z-index: 1000;
+      border-bottom: 1px solid #222;
+      backdrop-filter: blur(10px);
+    }
+
+    nav .logo {
+      color: #ffcc00;
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: #f5f5f5;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 8px 14px;
+      border-radius: 20px;
+      transition: 0.3s ease;
+    }
+    nav ul li a:link,
+nav ul li a:visited {
+  color: #f5f5f5;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  background-color: #ffcc00;
+  color: #000;
+}
+
+
+    nav ul li a:hover {
+      background-color: #ffcc00;
+      color: #000;
+    }
+
+    header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 120px 20px 60px;
+    }
+
+    .profile-pic {
+  width: 220px;   /* Increased from 160px */
+  height: 220px;  /* Increased from 160px */
+  border-radius: 50%;
+  border: 4px solid #ffcc00;
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 0 20px #ffcc00;
+  transition: 0.3s ease;
+}
+
+
+    .profile-pic:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px #ffcc00;
+    }
+
+    .profile-pic img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #ffcc00;
+    }
+
+    h2 {
+      margin-top: 8px;
+      font-weight: 400;
+      font-size: 1.2rem;
+      color: #d9d9d9;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .section-title {
+      color: #ffcc00;
+      font-size: 1.6rem;
+      margin-bottom: 15px;
+      border-left: 4px solid #ffcc00;
+      padding-left: 10px;
+    }
+
+    p {
+      line-height: 1.7;
+      color: #cccccc;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .skill {
+      background-color: #1a1a1a;
+      color: #ffcc00;
+      border: 1px solid #ffcc00;
+      border-radius: 20px;
+      padding: 8px 16px;
+      transition: 0.3s ease;
+    }
+
+    .skill:hover {
+      background-color: #ffcc00;
+      color: #000;
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #888;
+      font-size: 0.9rem;
+      border-top: 1px solid #222;
+      margin-top: 50px;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 700px) {
+      nav {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 20px;
+      }
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      h1 { font-size: 2rem; }
+      h2 { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav>
+    <div class="logo">Abhay</div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+     
+      <li>
+  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=chaudharyabhay32894@gmail.com" target="_blank">
+    Contact
+  </a>
+</li>
+
+      <li><a href="https://in.linkedin.com/in/abhay-chaudhary-b24697263" target="_blank">LinkedIn</a></li>
+      <li><a href="#" id="resumeLink">Resume</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="profile-pic">
+      <img src="https://avatars.githubusercontent.com/u/142333047?v=4" alt="Profile Photo">
+    </div>
+    <h1>Abhay Chaudhary</h1>
+    <h2>Web Developer | Cybersecurity Student | Tech Enthusiast</h2>
+  </header>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about">
+    <h3 class="section-title">About Me</h3>
+    <p>
+      I’m Abhay Chaudhary, a B.Tech CSE student with a strong interest in web development, cybersecurity, and data-driven technologies. 
+      I enjoy building creative and efficient digital solutions while constantly learning new tools and frameworks. 
+      With hands-on experience in ethical hacking and real-world projects, I aim to bridge innovation with practicality. 
+      I’m passionate about continuous learning, problem-solving, and turning ideas into impactful technology.
+    </p>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section id="skills">
+    <h3 class="section-title">Skills</h3>
+    <div class="skills-list">
+      <div class="skill">HTML</div>
+      <div class="skill">CSS</div>
+      <div class="skill">JavaScript</div>
+      <div class="skill">Python</div>
+      <div class="skill">Cybersecurity</div>
+      <div class="skill">Web Testing</div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Abhay Chaudhary | Designed with Passion & Code
+  </footer>
+
+  <script>
+    document.getElementById('resumeLink').addEventListener('click', function() {
+      alert('Resume download feature coming soon!');
+    });
+  </script>
+</body>
+</html>
+s
