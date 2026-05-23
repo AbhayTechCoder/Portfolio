@@ -1,248 +1,1009 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Abhay | Portfolio</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
 
-    body {
-      background-color: #0d0d0d;
-      color: #f5f5f5;
-      scroll-behavior: smooth;
-      overflow-x: hidden;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    /* ===== NAVBAR ===== */
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 12px 40px;
-      z-index: 1000;
-      border-bottom: 1px solid #222;
-      backdrop-filter: blur(10px);
-    }
+<title>Abhay Chaudhary | Futuristic Portfolio</title>
 
-    nav .logo {
-      color: #ffcc00;
-      font-size: 1.4rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-    }
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
-    nav ul li a {
-      color: #f5f5f5;
-      text-decoration: none;
-      font-weight: 500;
-      padding: 8px 14px;
-      border-radius: 20px;
-      transition: 0.3s ease;
-    }
-    nav ul li a:link,
-nav ul li a:visited {
-  color: #f5f5f5;
-  text-decoration: none;
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<style>
+
+/* ================= GLOBAL ================= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+font-family:'Poppins',sans-serif;
 }
 
-nav ul li a:hover {
-  background-color: #ffcc00;
-  color: #000;
+body{
+background:#050816;
+color:white;
+overflow-x:hidden;
+cursor:none;
 }
 
+/* ================= CURSOR ================= */
 
-    nav ul li a:hover {
-      background-color: #ffcc00;
-      color: #000;
-    }
-
-    header {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 120px 20px 60px;
-    }
-
-    .profile-pic {
-  width: 220px;   /* Increased from 160px */
-  height: 220px;  /* Increased from 160px */
-  border-radius: 50%;
-  border: 4px solid #ffcc00;
-  overflow: hidden;
-  margin-bottom: 20px;
-  box-shadow: 0 0 20px #ffcc00;
-  transition: 0.3s ease;
+.cursor{
+width:20px;
+height:20px;
+border:2px solid #a855f7;
+border-radius:50%;
+position:fixed;
+pointer-events:none;
+transform:translate(-50%,-50%);
+z-index:99999;
+box-shadow:0 0 20px #a855f7;
 }
 
+.cursor2{
+width:8px;
+height:8px;
+background:#3b82f6;
+border-radius:50%;
+position:fixed;
+pointer-events:none;
+transform:translate(-50%,-50%);
+z-index:99999;
+}
 
-    .profile-pic:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 30px #ffcc00;
-    }
+/* ================= SCROLLBAR ================= */
 
-    .profile-pic img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+::-webkit-scrollbar{
+width:8px;
+}
 
-    h1 {
-      font-size: 2.5rem;
-      color: #ffcc00;
-    }
+::-webkit-scrollbar-track{
+background:#0f172a;
+}
 
-    h2 {
-      margin-top: 8px;
-      font-weight: 400;
-      font-size: 1.2rem;
-      color: #d9d9d9;
-    }
+::-webkit-scrollbar-thumb{
+background:linear-gradient(#7c3aed,#2563eb);
+border-radius:20px;
+}
 
-    section {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
+/* ================= PARTICLES ================= */
 
-    .section-title {
-      color: #ffcc00;
-      font-size: 1.6rem;
-      margin-bottom: 15px;
-      border-left: 4px solid #ffcc00;
-      padding-left: 10px;
-    }
+#particles-js{
+position:fixed;
+width:100%;
+height:100%;
+z-index:-5;
+}
 
-    p {
-      line-height: 1.7;
-      color: #cccccc;
-    }
+/* ================= GLOW ================= */
 
-    .skills-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 10px;
-    }
+.glow{
+position:fixed;
+width:500px;
+height:500px;
+border-radius:50%;
+filter:blur(150px);
+opacity:.25;
+z-index:-2;
+}
 
-    .skill {
-      background-color: #1a1a1a;
-      color: #ffcc00;
-      border: 1px solid #ffcc00;
-      border-radius: 20px;
-      padding: 8px 16px;
-      transition: 0.3s ease;
-    }
+.glow1{
+background:#7c3aed;
+top:-200px;
+left:-200px;
+}
 
-    .skill:hover {
-      background-color: #ffcc00;
-      color: #000;
-      transform: scale(1.05);
-    }
+.glow2{
+background:#2563eb;
+bottom:-200px;
+right:-200px;
+}
 
-    footer {
-      text-align: center;
-      padding: 30px;
-      color: #888;
-      font-size: 0.9rem;
-      border-top: 1px solid #222;
-      margin-top: 50px;
-    }
+/* ================= LOADER ================= */
 
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 700px) {
-      nav {
-        flex-direction: column;
-        gap: 10px;
-        padding: 10px 20px;
-      }
-      nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-      h1 { font-size: 2rem; }
-      h2 { font-size: 1rem; }
-    }
-  </style>
+.loader{
+position:fixed;
+width:100%;
+height:100%;
+background:#050816;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:999999;
+transition:1s;
+}
+
+.loader h1{
+font-size:3rem;
+background:linear-gradient(to right,#a855f7,#3b82f6);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+0%{opacity:.5;}
+50%{opacity:1;}
+100%{opacity:.5;}
+}
+
+/* ================= NAVBAR ================= */
+
+nav{
+position:fixed;
+top:0;
+width:100%;
+padding:18px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(255,255,255,.04);
+backdrop-filter:blur(12px);
+border-bottom:1px solid rgba(255,255,255,.08);
+z-index:1000;
+transition:.4s;
+}
+
+nav.scrolled{
+padding:12px 8%;
+background:rgba(5,8,22,.85);
+}
+
+.logo{
+font-size:1.7rem;
+font-weight:800;
+background:linear-gradient(to right,#a855f7,#3b82f6);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+nav ul{
+display:flex;
+gap:22px;
+list-style:none;
+}
+
+nav ul li a{
+text-decoration:none;
+color:white;
+padding:10px 18px;
+border-radius:40px;
+font-weight:500;
+transition:.3s;
+}
+
+nav ul li a:hover{
+background:linear-gradient(to right,#7c3aed,#2563eb);
+transform:translateY(-3px);
+box-shadow:0 0 20px rgba(124,58,237,.5);
+}
+
+/* ================= HERO ================= */
+
+.hero{
+min-height:auto;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:120px 8% 70px;
+gap:40px;
+flex-wrap:wrap;
+position:relative;
+}
+
+.hero-left{
+flex:1;
+min-width:300px;
+}
+
+.hero-left h3{
+font-size:1.2rem;
+color:#a855f7;
+margin-bottom:10px;
+}
+
+.hero-left h1{
+font-size:5rem;
+line-height:1.1;
+margin-bottom:18px;
+font-weight:800;
+}
+
+.gradient{
+background:linear-gradient(to right,#a855f7,#3b82f6);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.typing{
+font-size:1.2rem;
+font-weight:600;
+margin-bottom:25px;
+color:#a855f7;
+}
+
+.hero-left p{
+color:#cbd5e1;
+line-height:1.9;
+font-size:1rem;
+max-width:650px;
+margin-bottom:35px;
+}
+
+.buttons{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:14px 28px;
+border-radius:40px;
+font-weight:600;
+text-decoration:none;
+transition:.3s;
+display:inline-block;
+}
+
+.primary-btn{
+background:linear-gradient(to right,#7c3aed,#2563eb);
+color:white;
+box-shadow:0 0 25px rgba(124,58,237,.5);
+}
+
+.primary-btn:hover{
+transform:translateY(-5px);
+}
+
+.outline-btn{
+border:1px solid rgba(255,255,255,.15);
+background:rgba(255,255,255,.05);
+color:white;
+backdrop-filter:blur(10px);
+}
+
+.outline-btn:hover{
+background:rgba(255,255,255,.1);
+transform:translateY(-5px);
+}
+
+/* ================= PROFILE ================= */
+
+.hero-right{
+flex:1;
+display:flex;
+justify-content:center;
+align-items:center;
+min-width:300px;
+}
+
+.profile-box{
+width:330px;
+height:330px;
+border-radius:35px;
+padding:8px;
+background:linear-gradient(145deg,#7c3aed,#2563eb);
+animation:float 5s ease-in-out infinite;
+box-shadow:
+0 0 50px rgba(124,58,237,.5),
+0 0 100px rgba(37,99,235,.2);
+}
+
+.profile-inner{
+width:100%;
+height:100%;
+overflow:hidden;
+border-radius:28px;
+}
+
+.profile-inner img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+@keyframes float{
+0%{transform:translateY(0px);}
+50%{transform:translateY(-18px);}
+100%{transform:translateY(0px);}
+}
+
+/* ================= SECTION ================= */
+
+section{
+padding:90px 8%;
+position:relative;
+}
+
+.section-title{
+text-align:center;
+font-size:2.8rem;
+margin-bottom:50px;
+font-weight:700;
+background:linear-gradient(to right,#a855f7,#3b82f6);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+/* ================= GLASS ================= */
+
+.glass{
+background:rgba(255,255,255,.04);
+border:1px solid rgba(255,255,255,.08);
+backdrop-filter:blur(15px);
+border-radius:28px;
+padding:35px;
+transition:.4s;
+}
+
+.glass:hover{
+transform:translateY(-8px);
+box-shadow:0 0 40px rgba(124,58,237,.25);
+}
+
+/* ================= ABOUT ================= */
+
+.about-text{
+line-height:2;
+font-size:1rem;
+color:#cbd5e1;
+}
+
+/* ================= SKILLS ================= */
+
+.skills-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:22px;
+}
+
+.skill{
+text-align:center;
+padding:30px 20px;
+}
+
+.skill i{
+font-size:2.4rem;
+margin-bottom:18px;
+color:#a855f7;
+}
+
+.skill h3{
+font-size:1rem;
+}
+
+/* ================= PROJECTS ================= */
+
+.projects-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.project h3{
+font-size:1.5rem;
+margin-bottom:15px;
+color:#a855f7;
+}
+
+.project p{
+line-height:1.8;
+color:#cbd5e1;
+margin-bottom:20px;
+}
+
+.tags{
+display:flex;
+gap:10px;
+flex-wrap:wrap;
+}
+
+.tag{
+padding:8px 14px;
+border-radius:20px;
+background:rgba(124,58,237,.2);
+font-size:.8rem;
+}
+
+/* ================= CONTACT ================= */
+
+.contact{
+text-align:center;
+}
+
+.contact h2{
+font-size:2.4rem;
+margin-bottom:18px;
+}
+
+.contact p{
+line-height:1.8;
+color:#cbd5e1;
+margin-bottom:30px;
+}
+
+.socials{
+display:flex;
+justify-content:center;
+gap:18px;
+margin-top:30px;
+flex-wrap:wrap;
+}
+
+.socials a{
+width:52px;
+height:52px;
+display:flex;
+justify-content:center;
+align-items:center;
+border-radius:50%;
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
+color:white;
+font-size:1.2rem;
+transition:.3s;
+text-decoration:none;
+}
+
+.socials a:hover{
+background:linear-gradient(to right,#7c3aed,#2563eb);
+transform:translateY(-5px);
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+padding:25px;
+text-align:center;
+color:#94a3b8;
+border-top:1px solid rgba(255,255,255,.08);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px){
+
+.hero{
+padding:120px 6% 60px;
+gap:35px;
+}
+
+.hero-left h1{
+font-size:3.2rem;
+}
+
+.profile-box{
+width:270px;
+height:270px;
+}
+
+}
+
+@media(max-width:768px){
+
+body{
+cursor:auto;
+}
+
+.cursor,
+.cursor2{
+display:none;
+}
+
+/* ===== NAVBAR ===== */
+
+nav{
+padding:14px 5%;
+flex-direction:column;
+gap:12px;
+}
+
+nav ul{
+flex-wrap:wrap;
+justify-content:center;
+gap:8px;
+}
+
+nav ul li a{
+padding:8px 14px;
+font-size:.9rem;
+}
+
+/* ===== HERO ===== */
+
+.hero{
+padding:150px 5% 45px;
+gap:22px;
+flex-direction:column;
+text-align:center;
+}
+
+.hero-left{
+display:flex;
+flex-direction:column;
+align-items:center;
+}
+
+.hero-left h3{
+font-size:1rem;
+}
+
+.hero-left h1{
+font-size:2.5rem;
+margin-bottom:14px;
+}
+
+.typing{
+font-size:1rem;
+margin-bottom:18px;
+}
+
+.hero-left p{
+font-size:.94rem;
+line-height:1.8;
+margin-bottom:25px;
+}
+
+.buttons{
+justify-content:center;
+gap:12px;
+}
+
+.btn{
+padding:12px 20px;
+font-size:.88rem;
+}
+
+/* ===== PROFILE ===== */
+
+.hero-right{
+margin-top:0;
+}
+
+.profile-box{
+width:220px;
+height:220px;
+border-radius:26px;
+}
+
+.profile-inner{
+border-radius:20px;
+}
+
+/* ===== SECTION ===== */
+
+section{
+padding:65px 5%;
+}
+
+.section-title{
+font-size:2rem;
+margin-bottom:35px;
+}
+
+.glass{
+padding:24px;
+border-radius:24px;
+}
+
+/* ===== ABOUT ===== */
+
+.about-text{
+font-size:.94rem;
+line-height:1.9;
+}
+
+/* ===== SKILLS ===== */
+
+.skills-grid{
+grid-template-columns:repeat(2,1fr);
+gap:14px;
+}
+
+.skill{
+padding:22px 14px;
+}
+
+.skill i{
+font-size:2rem;
+}
+
+.skill h3{
+font-size:.9rem;
+}
+
+/* ===== PROJECTS ===== */
+
+.projects-grid{
+grid-template-columns:1fr;
+}
+
+.project h3{
+font-size:1.3rem;
+}
+
+.project p{
+font-size:.9rem;
+}
+
+/* ===== CONTACT ===== */
+
+.contact h2{
+font-size:2rem;
+}
+
+.contact p{
+font-size:.92rem;
+}
+
+.socials a{
+width:48px;
+height:48px;
+font-size:1rem;
+}
+
+/* ===== FOOTER ===== */
+
+footer{
+font-size:.85rem;
+}
+
+}
+
+</style>
+
 </head>
+
 <body>
 
-  <!-- ===== NAVBAR ===== -->
-  <nav>
-    <div class="logo">Abhay</div>
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-     
-      <li>
-  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=chaudharyabhay32894@gmail.com" target="_blank">
-    Contact
-  </a>
-</li>
+<div class="loader" id="loader">
+<h1>Abhay.dev</h1>
+</div>
 
-      <li><a href="https://in.linkedin.com/in/abhay-chaudhary-b24697263" target="_blank">LinkedIn</a></li>
-      <li><a href="#" id="resumeLink">Resume</a></li>
-    </ul>
-  </nav>
+<div class="cursor"></div>
+<div class="cursor2"></div>
 
-  <!-- ===== HEADER ===== -->
-  <header>
-    <div class="profile-pic">
-      <img src="https://avatars.githubusercontent.com/u/142333047?v=4" alt="Profile Photo">
-    </div>
-    <h1>Abhay Chaudhary</h1>
-    <h2>Web Developer | Cybersecurity Student | Tech Enthusiast</h2>
-  </header>
+<div id="particles-js"></div>
 
-  <!-- ===== ABOUT ===== -->
-  <section id="about">
-    <h3 class="section-title">About Me</h3>
-    <p>
-      I’m Abhay Chaudhary, a B.Tech CSE student with a strong interest in web development, cybersecurity, and data-driven technologies. 
-      I enjoy building creative and efficient digital solutions while constantly learning new tools and frameworks. 
-      With hands-on experience in ethical hacking and real-world projects, I aim to bridge innovation with practicality. 
-      I’m passionate about continuous learning, problem-solving, and turning ideas into impactful technology.
-    </p>
-  </section>
+<div class="glow glow1"></div>
+<div class="glow glow2"></div>
 
-  <!-- ===== SKILLS ===== -->
-  <section id="skills">
-    <h3 class="section-title">Skills</h3>
-    <div class="skills-list">
-      <div class="skill">Web Development & AI Projects<p> </p></p></div>
-      <div class="skill">CSS <p> </p></div>
-      <div class="skill">JavaScript<p> </p></div>
-      <div class="skill">Python<p> </p></div>
-      <div class="skill">Cybersecurity<p> </p></div>
-      <div class="skill">Web Testing<p> </p></div>
-    </div>
-  </section>
+<nav id="navbar">
 
-  <footer>
-    © 2025 Abhay Chaudhary | Designed with Passion & Code
-  </footer>
+<div class="logo">Abhay.dev</div>
 
-  <script>
-    document.getElementById('resumeLink').addEventListener('click', function() {
-      alert('Resume download feature coming soon!');
-    });
-  </script>
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+
+<section class="hero">
+
+<div class="hero-left" data-aos="fade-right">
+
+<h3>HELLO, I'M</h3>
+
+<h1>
+<span class="gradient">Abhay</span><br>
+Chaudhary
+</h1>
+
+<div class="typing gradient">
+Full Stack Developer & Cybersecurity Enthusiast
+</div>
+
+<p>
+A passionate developer focused on creating futuristic web experiences, scalable backend systems, secure applications, and premium digital products using modern technologies.
+</p>
+
+<div class="buttons">
+
+<a href="#projects" class="btn primary-btn">
+View Projects
+</a>
+
+<a href="https://in.linkedin.com/in/abhay-chaudhary-b24697263" target="_blank" class="btn outline-btn">
+LinkedIn
+</a>
+
+<a href="https://mail.google.com/mail/?view=cm&fs=1&to=chaudharyabhay32894@gmail.com" target="_blank" class="btn outline-btn">
+Contact
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-right" data-aos="fade-left">
+
+<div class="profile-box">
+
+<div class="profile-inner">
+
+<img src="https://avatars.githubusercontent.com/u/142333047?v=4" alt="Abhay">
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="about">
+
+<h2 class="section-title" data-aos="zoom-in">
+About Me
+</h2>
+
+<div class="glass" data-aos="fade-up">
+
+<div class="about-text">
+
+I’m Abhay Chaudhary, a final-year B.Tech Computer Science student passionate about Full Stack Development, Cybersecurity, AI tools, and futuristic web experiences.
+
+I specialize in building secure backend systems, modern frontend interfaces, REST APIs, JWT authentication flows, and scalable digital products using React.js, Node.js, Express.js, MongoDB, and JavaScript.
+
+I’ve worked on projects including restaurant management systems, AI assistants, cybersecurity research tools, and interactive full-stack web applications.
+
+</div>
+
+</div>
+
+</section>
+
+<section id="skills">
+
+<h2 class="section-title" data-aos="zoom-in">
+Skills
+</h2>
+
+<div class="skills-grid">
+
+<div class="glass skill">
+<i class="fab fa-html5"></i>
+<h3>HTML5</h3>
+</div>
+
+<div class="glass skill">
+<i class="fab fa-css3-alt"></i>
+<h3>CSS3</h3>
+</div>
+
+<div class="glass skill">
+<i class="fab fa-js"></i>
+<h3>JavaScript</h3>
+</div>
+
+<div class="glass skill">
+<i class="fab fa-react"></i>
+<h3>React.js</h3>
+</div>
+
+<div class="glass skill">
+<i class="fab fa-node-js"></i>
+<h3>Node.js</h3>
+</div>
+
+<div class="glass skill">
+<i class="fas fa-database"></i>
+<h3>MongoDB</h3>
+</div>
+
+<div class="glass skill">
+<i class="fas fa-shield-alt"></i>
+<h3>Cybersecurity</h3>
+</div>
+
+<div class="glass skill">
+<i class="fas fa-code"></i>
+<h3>REST APIs</h3>
+</div>
+
+</div>
+
+</section>
+
+<section id="projects">
+
+<h2 class="section-title" data-aos="zoom-in">
+Projects
+</h2>
+
+<div class="projects-grid">
+
+<div class="glass project">
+
+<h3>RestroQR</h3>
+
+<p>
+A full-stack restaurant management system with QR ordering, real-time updates, JWT authentication, responsive dashboard, and modern UI experience.
+</p>
+
+<div class="tags">
+<span class="tag">React</span>
+<span class="tag">Node.js</span>
+<span class="tag">MongoDB</span>
+<span class="tag">JWT</span>
+</div>
+
+</div>
+
+<div class="glass project">
+
+<h3>AI Assistant</h3>
+
+<p>
+An intelligent AI assistant with multiple specialized agents focused on productivity, automation, and smart interactions.
+</p>
+
+<div class="tags">
+<span class="tag">AI</span>
+<span class="tag">Automation</span>
+<span class="tag">APIs</span>
+<span class="tag">JavaScript</span>
+</div>
+
+</div>
+
+<div class="glass project">
+
+<h3>Cybersecurity Research</h3>
+
+<p>
+Research-based project involving phishing detection, endpoint protection, ethical hacking, and web vulnerability testing methodologies.
+</p>
+
+<div class="tags">
+<span class="tag">Linux</span>
+<span class="tag">Burp Suite</span>
+<span class="tag">Nmap</span>
+<span class="tag">Security</span>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<div class="glass contact">
+
+<h2 class="gradient">
+Let's Connect
+</h2>
+
+<p>
+Interested in collaboration, freelance work, projects, or tech discussions? Feel free to connect with me.
+</p>
+
+<a href="mailto:chaudharyabhay32894@gmail.com" class="btn primary-btn">
+Contact Me
+</a>
+
+<div class="socials">
+
+<a href="https://github.com/" target="_blank">
+<i class="fab fa-github"></i>
+</a>
+
+<a href="https://in.linkedin.com/in/abhay-chaudhary-b24697263" target="_blank">
+<i class="fab fa-linkedin-in"></i>
+</a>
+
+<a href="mailto:chaudharyabhay32894@gmail.com">
+<i class="fas fa-envelope"></i>
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 Abhay Chaudhary • Designed With Passion & Code
+</footer>
+
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+
+AOS.init({
+duration:1000,
+once:true
+});
+
+window.addEventListener('load',()=>{
+
+setTimeout(()=>{
+document.getElementById('loader').style.opacity='0';
+
+setTimeout(()=>{
+document.getElementById('loader').style.display='none';
+},1000);
+
+},1200);
+
+});
+
+window.addEventListener('scroll',()=>{
+
+const nav=document.getElementById('navbar');
+
+if(window.scrollY>50){
+nav.classList.add('scrolled');
+}
+else{
+nav.classList.remove('scrolled');
+}
+
+});
+
+const cursor=document.querySelector('.cursor');
+const cursor2=document.querySelector('.cursor2');
+
+document.addEventListener('mousemove',(e)=>{
+
+cursor.style.left=e.clientX+'px';
+cursor.style.top=e.clientY+'px';
+
+cursor2.style.left=e.clientX+'px';
+cursor2.style.top=e.clientY+'px';
+
+});
+
+particlesJS('particles-js',{
+
+particles:{
+number:{
+value:60
+},
+color:{
+value:'#ffffff'
+},
+shape:{
+type:'circle'
+},
+opacity:{
+value:.25
+},
+size:{
+value:2.5
+},
+move:{
+enable:true,
+speed:1
+}
+},
+
+interactivity:{
+events:{
+onhover:{
+enable:true,
+mode:'repulse'
+}
+}
+}
+
+});
+
+</script>
+
 </body>
 </html>
-s
