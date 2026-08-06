@@ -5,8 +5,8 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Abhay Chaudhary | Futuristic Portfolio</title>
+<link rel="icon" type="image/jpeg" href="/0b11217.png">
+<title>Abhay Chaudhary | Technical Support Engineer</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -98,12 +98,24 @@ z-index:-2;
 background:#7c3aed;
 top:-200px;
 left:-200px;
+animation:move1 10s infinite alternate;
 }
 
 .glow2{
 background:#2563eb;
 bottom:-200px;
 right:-200px;
+animation:move2 10s infinite alternate;
+}
+
+@keyframes move1{
+0%{transform:translate(0,0);}
+100%{transform:translate(80px,80px);}
+}
+
+@keyframes move2{
+0%{transform:translate(0,0);}
+100%{transform:translate(-80px,-80px);}
 }
 
 /* ================= LOADER ================= */
@@ -153,7 +165,7 @@ transition:.4s;
 
 nav.scrolled{
 padding:12px 8%;
-background:rgba(5,8,22,.85);
+background:rgba(5,8,22,.9);
 }
 
 .logo{
@@ -166,7 +178,7 @@ background:linear-gradient(to right,#a855f7,#3b82f6);
 
 nav ul{
 display:flex;
-gap:22px;
+gap:20px;
 list-style:none;
 }
 
@@ -176,13 +188,15 @@ color:white;
 padding:10px 18px;
 border-radius:40px;
 font-weight:500;
-transition:.3s;
+transition:.35s ease;
 }
 
 nav ul li a:hover{
 background:linear-gradient(to right,#7c3aed,#2563eb);
-transform:translateY(-3px);
-box-shadow:0 0 20px rgba(124,58,237,.5);
+transform:translateY(-4px) scale(1.05);
+box-shadow:
+0 0 15px rgba(124,58,237,.5),
+0 0 35px rgba(37,99,235,.3);
 }
 
 /* ================= HERO ================= */
@@ -248,9 +262,8 @@ padding:14px 28px;
 border-radius:40px;
 font-weight:600;
 text-decoration:none;
-transition:.3s;
+transition:.35s ease;
 display:inline-block;
-cursor:pointer;
 }
 
 .primary-btn{
@@ -260,7 +273,10 @@ box-shadow:0 0 25px rgba(124,58,237,.5);
 }
 
 .primary-btn:hover{
-transform:translateY(-5px);
+transform:translateY(-5px) scale(1.05);
+box-shadow:
+0 0 20px rgba(124,58,237,.5),
+0 0 40px rgba(37,99,235,.3);
 }
 
 .outline-btn{
@@ -295,6 +311,15 @@ animation:float 5s ease-in-out infinite;
 box-shadow:
 0 0 50px rgba(124,58,237,.5),
 0 0 100px rgba(37,99,235,.2);
+transition:.5s ease;
+cursor:pointer;
+}
+
+.profile-box:hover{
+transform:translateY(-10px) scale(1.03);
+box-shadow:
+0 0 35px rgba(124,58,237,.6),
+0 0 70px rgba(37,99,235,.3);
 }
 
 .profile-inner{
@@ -341,12 +366,14 @@ border:1px solid rgba(255,255,255,.08);
 backdrop-filter:blur(15px);
 border-radius:28px;
 padding:35px;
-transition:.4s;
+transition:.4s ease;
 }
 
 .glass:hover{
 transform:translateY(-8px);
-box-shadow:0 0 40px rgba(124,58,237,.25);
+box-shadow:
+0 0 25px rgba(124,58,237,.35),
+0 0 50px rgba(37,99,235,.15);
 }
 
 /* ================= ABOUT ================= */
@@ -368,12 +395,44 @@ gap:22px;
 .skill{
 text-align:center;
 padding:30px 20px;
+position:relative;
+overflow:hidden;
+cursor:pointer;
+}
+
+.skill::before{
+content:'';
+position:absolute;
+top:0;
+left:-100%;
+width:100%;
+height:100%;
+background:linear-gradient(120deg,transparent,rgba(255,255,255,.08),transparent);
+transition:.6s;
+}
+
+.skill:hover::before{
+left:100%;
+}
+
+.skill:hover{
+transform:translateY(-10px) scale(1.04);
+background:linear-gradient(145deg,rgba(124,58,237,.15),rgba(37,99,235,.12));
+box-shadow:
+0 0 25px rgba(124,58,237,.45),
+0 0 50px rgba(37,99,235,.2);
 }
 
 .skill i{
 font-size:2.4rem;
 margin-bottom:18px;
 color:#a855f7;
+transition:.4s ease;
+}
+
+.skill:hover i{
+transform:scale(1.2) rotate(5deg);
+color:white;
 }
 
 .skill h3{
@@ -384,25 +443,58 @@ font-size:1rem;
 
 .projects-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:25px;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
 }
 
 .project{
 position:relative;
 overflow:hidden;
+cursor:pointer;
+display:flex;
+flex-direction:column;
+}
+
+.project::before{
+content:'';
+position:absolute;
+top:-100%;
+left:-100%;
+width:250%;
+height:250%;
+background:linear-gradient(120deg,transparent,rgba(255,255,255,.05),transparent);
+transform:rotate(25deg);
+transition:.8s;
+}
+
+.project:hover::before{
+top:100%;
+left:100%;
+}
+
+.project:hover{
+transform:translateY(-12px) scale(1.02);
+background:linear-gradient(145deg,rgba(124,58,237,.12),rgba(37,99,235,.08));
+box-shadow:
+0 0 30px rgba(124,58,237,.45),
+0 0 60px rgba(37,99,235,.2);
 }
 
 .project h3{
 font-size:1.5rem;
 margin-bottom:15px;
 color:#a855f7;
+display:flex;
+align-items:center;
+gap:12px;
+flex-wrap:wrap;
 }
 
 .project p{
 line-height:1.8;
 color:#cbd5e1;
 margin-bottom:20px;
+flex-grow:1;
 }
 
 .tags{
@@ -417,29 +509,57 @@ padding:8px 14px;
 border-radius:20px;
 background:rgba(124,58,237,.2);
 font-size:.8rem;
+transition:.3s ease;
+cursor:pointer;
 }
+
+.tag:hover{
+background:linear-gradient(to right,#7c3aed,#2563eb);
+transform:translateY(-3px) scale(1.06);
+box-shadow:0 0 15px rgba(124,58,237,.4);
+}
+
+/* ================= DEMO BUTTON ================= */
 
 .project-buttons{
 display:flex;
 gap:12px;
 flex-wrap:wrap;
+margin-top:10px;
 }
 
 .project-btn{
-position:relative;
-z-index:10;
+padding:10px 20px;
+font-size:0.85rem;
+text-decoration:none;
+display:inline-flex;
+align-items:center;
+gap:8px;
 }
 
-.live-badge {
-    display: inline-block;
-    background: linear-gradient(135deg, #10b981, #059669);
-    font-size: 0.7rem;
-    font-weight: 600;
-    padding: 4px 12px;
-    border-radius: 40px;
-    margin-left: 12px;
-    vertical-align: middle;
-    box-shadow: 0 0 8px rgba(16,185,129,0.5);
+.live-badge{
+background:linear-gradient(135deg,#10b981,#059669);
+color:white;
+font-size:0.7rem;
+font-weight:600;
+padding:4px 12px;
+border-radius:40px;
+display:inline-flex;
+align-items:center;
+gap:6px;
+box-shadow:0 0 10px rgba(16,185,129,0.5);
+}
+
+.live-badge i{
+font-size:0.65rem;
+color:#fff;
+animation:pulse-green 1.5s infinite;
+}
+
+@keyframes pulse-green{
+0%{opacity:0.6;}
+50%{opacity:1;}
+100%{opacity:0.6;}
 }
 
 /* ================= CONTACT ================= */
@@ -478,13 +598,16 @@ background:rgba(255,255,255,.05);
 border:1px solid rgba(255,255,255,.08);
 color:white;
 font-size:1.2rem;
-transition:.3s;
+transition:.35s ease;
 text-decoration:none;
 }
 
 .socials a:hover{
 background:linear-gradient(to right,#7c3aed,#2563eb);
-transform:translateY(-5px);
+transform:translateY(-6px) rotate(8deg) scale(1.08);
+box-shadow:
+0 0 20px rgba(124,58,237,.5),
+0 0 40px rgba(37,99,235,.3);
 }
 
 /* ================= FOOTER ================= */
@@ -497,6 +620,24 @@ border-top:1px solid rgba(255,255,255,.08);
 }
 
 /* ================= RESPONSIVE ================= */
+
+@media(max-width:900px){
+
+.hero{
+padding:120px 6% 60px;
+gap:35px;
+}
+
+.hero-left h1{
+font-size:3.2rem;
+}
+
+.profile-box{
+width:270px;
+height:270px;
+}
+
+}
 
 @media(max-width:768px){
 
@@ -521,6 +662,11 @@ justify-content:center;
 gap:8px;
 }
 
+nav ul li a{
+padding:8px 14px;
+font-size:.9rem;
+}
+
 .hero{
 padding:150px 5% 45px;
 gap:22px;
@@ -536,11 +682,38 @@ align-items:center;
 
 .hero-left h1{
 font-size:2.5rem;
+margin-bottom:14px;
+}
+
+.typing{
+font-size:1rem;
+margin-bottom:18px;
+}
+
+.hero-left p{
+font-size:.94rem;
+line-height:1.8;
+margin-bottom:25px;
+}
+
+.buttons{
+justify-content:center;
+gap:12px;
+}
+
+.btn{
+padding:12px 20px;
+font-size:.88rem;
 }
 
 .profile-box{
 width:220px;
 height:220px;
+border-radius:26px;
+}
+
+.profile-inner{
+border-radius:20px;
 }
 
 section{
@@ -549,14 +722,69 @@ padding:65px 5%;
 
 .section-title{
 font-size:2rem;
+margin-bottom:35px;
+}
+
+.glass{
+padding:24px;
+border-radius:24px;
+}
+
+.about-text{
+font-size:.94rem;
+line-height:1.9;
 }
 
 .skills-grid{
 grid-template-columns:repeat(2,1fr);
+gap:14px;
+}
+
+.skill{
+padding:22px 14px;
+}
+
+.skill i{
+font-size:2rem;
 }
 
 .projects-grid{
 grid-template-columns:1fr;
+gap:20px;
+}
+
+.project h3{
+font-size:1.3rem;
+}
+
+.project p{
+font-size:.9rem;
+}
+
+.project-buttons{
+flex-direction:column;
+}
+
+.project-btn{
+justify-content:center;
+}
+
+.contact h2{
+font-size:2rem;
+}
+
+.contact p{
+font-size:.92rem;
+}
+
+.socials a{
+width:48px;
+height:48px;
+font-size:1rem;
+}
+
+footer{
+font-size:.85rem;
 }
 
 }
@@ -604,11 +832,11 @@ Chaudhary
 </h1>
 
 <div class="typing gradient">
-Full Stack Developer & Cybersecurity Enthusiast
+Technical Support Engineer | Linux | SQL | MariaDB | Asterisk
 </div>
 
 <p>
-A passionate developer focused on creating futuristic web experiences, scalable backend systems, secure applications, and premium digital products using modern technologies.
+Technical Support Engineer with hands-on experience in Linux production support, SQL troubleshooting, MariaDB database administration, Apache HTTP Server, Apache Tomcat, and Asterisk-based telephony solutions. Experienced in production monitoring, incident management, application support, log analysis, customer issue resolution, and network troubleshooting.
 </p>
 
 <div class="buttons">
@@ -621,7 +849,7 @@ View Projects
 LinkedIn
 </a>
 
-<a href="mailto:chaudharyabhay32894@gmail.com" target="_blank" class="btn outline-btn">
+<a href="mailto:chaudharyabhay32894@gmail.com" class="btn outline-btn">
 Contact
 </a>
 
@@ -655,11 +883,11 @@ About Me
 
 <div class="about-text">
 
-I’m Abhay Chaudhary, a final-year B.Tech Computer Science student passionate about Full Stack Development, Cybersecurity, AI tools, and futuristic web experiences.
+I'm Abhay Chaudhary, a Technical Support Engineer with a B.Tech in Computer Science (CGPA: 8.69) from Seth Vishambhar Nath Institute of Engineering & Technology, Lucknow.
 
-I specialize in building secure backend systems, modern frontend interfaces, REST APIs, JWT authentication flows, and scalable digital products using React.js, Node.js, Express.js, MongoDB, and JavaScript.
+I specialize in Linux production support, SQL/MariaDB troubleshooting, Apache HTTP Server, Apache Tomcat, and Asterisk PBX environments. My expertise includes production monitoring, incident management, log analysis, root cause analysis, and network troubleshooting (TCP/IP, DNS, HTTP/HTTPS).
 
-I’ve worked on projects including restaurant management systems, AI assistants, cybersecurity research tools, and interactive full-stack web applications.
+Beyond support, I build full-stack web applications, AI assistants, and cybersecurity research tools — combining development skills with operations to deliver reliable, secure solutions.
 
 </div>
 
@@ -670,19 +898,49 @@ I’ve worked on projects including restaurant management systems, AI assistants
 <section id="skills">
 
 <h2 class="section-title" data-aos="zoom-in">
-Skills
+Technical Skills
 </h2>
 
 <div class="skills-grid">
 
 <div class="glass skill">
-<i class="fab fa-html5"></i>
-<h3>HTML5</h3>
+<i class="fab fa-linux"></i>
+<h3>Linux (CentOS)</h3>
 </div>
 
 <div class="glass skill">
-<i class="fab fa-css3-alt"></i>
-<h3>CSS3</h3>
+<i class="fas fa-database"></i>
+<h3>SQL / MariaDB</h3>
+</div>
+
+<div class="glass skill">
+<i class="fas fa-server"></i>
+<h3>Apache / Tomcat</h3>
+</div>
+
+<div class="glass skill">
+<i class="fas fa-phone"></i>
+<h3>Asterisk PBX</h3>
+</div>
+
+<div class="glass skill">
+<i class="fas fa-network-wired"></i>
+<h3>TCP/IP / DNS</h3>
+</div>
+
+<div class="glass skill">
+<i class="fas fa-terminal"></i>
+<h3>PuTTY / WinSCP</h3>
+</div>
+
+<div class="glass skill">
+<i class="fab fa-python"></i>
+<h3>Python / Java / C</h3>
+</div>
+
+<div class="glass skill">
+<i class="fas fa-shield-alt"></i>
+<h3>Security Research</h3>
 </div>
 
 <div class="glass skill">
@@ -698,16 +956,6 @@ Skills
 <div class="glass skill">
 <i class="fab fa-node-js"></i>
 <h3>Node.js</h3>
-</div>
-
-<div class="glass skill">
-<i class="fas fa-database"></i>
-<h3>MongoDB</h3>
-</div>
-
-<div class="glass skill">
-<i class="fas fa-shield-alt"></i>
-<h3>Cybersecurity</h3>
 </div>
 
 <div class="glass skill">
@@ -727,133 +975,80 @@ Projects
 
 <div class="projects-grid">
 
-<!-- ================= RESTRO QR ================= -->
-
-<div class="glass project">
-
-<h3>RestroQR</h3>
-
-<p>
-A full-stack restaurant management system with QR ordering, real-time updates, JWT authentication, responsive dashboard, and modern UI experience.
-</p>
-
+<!-- Project 1: RestroQR - FULLY LIVE -->
+<div class="glass project" data-aos="fade-up" data-aos-delay="0">
+<h3>
+RestroQR
+<span class="live-badge">
+<i class="fas fa-circle"></i> LIVE
+</span>
+</h3>
+<p>A full-stack restaurant management system with QR ordering, real-time updates, JWT authentication, responsive dashboard, and modern UI experience.</p>
 <div class="tags">
 <span class="tag">React</span>
 <span class="tag">Node.js</span>
 <span class="tag">MongoDB</span>
 <span class="tag">JWT</span>
 </div>
-
 <div class="project-buttons">
-
-<a href="#" target="_blank" class="btn outline-btn project-btn">
-Code
-</a>
-
-<a href="#" target="_blank" class="btn primary-btn project-btn">
-Live
-</a>
-
+<a href="https://github.com/AbhayTechCoder/RestroQR" target="_blank" class="btn outline-btn project-btn"><i class="fab fa-github"></i> Code</a>
+<a href="https://abhay-tech-coder-abhay-tech-coder-r-virid.vercel.app/" target="_blank" class="btn primary-btn project-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+</div>
 </div>
 
-</div>
-
-<!-- ================= AI ASSISTANT ================= -->
-
-<div class="glass project">
-
+<!-- Project 2: AI Assistant -->
+<div class="glass project" data-aos="fade-up" data-aos-delay="100">
 <h3>AI Assistant</h3>
-
-<p>
-An intelligent AI assistant with multiple specialized agents focused on productivity, automation, and smart interactions.
-</p>
-
+<p>An intelligent AI assistant with multiple specialized agents focused on productivity, automation, and smart interactions using modern AI APIs.</p>
 <div class="tags">
 <span class="tag">AI</span>
 <span class="tag">Automation</span>
 <span class="tag">APIs</span>
 <span class="tag">JavaScript</span>
 </div>
-
 <div class="project-buttons">
-
-<a href="#" target="_blank" class="btn outline-btn project-btn">
-Code
-</a>
-
-<a href="#" target="_blank" class="btn primary-btn project-btn">
-Live
-</a>
-
+<a href="#" class="btn outline-btn project-btn"><i class="fab fa-github"></i> Code</a>
+<a href="#" class="btn primary-btn project-btn developing-btn" style="opacity:0.6; cursor:not-allowed;"><i class="fas fa-external-link-alt"></i> Coming Soon</a>
+</div>
 </div>
 
-</div>
-
-<!-- ================= CYBER SECURITY ================= -->
-
-<div class="glass project">
-
+<!-- Project 3: Cybersecurity Research -->
+<div class="glass project" data-aos="fade-up" data-aos-delay="200">
 <h3>Cybersecurity Research</h3>
-
-<p>
-Research-based project involving phishing detection, endpoint protection, ethical hacking, and web vulnerability testing methodologies.
-</p>
-
+<p>Research-based project involving phishing detection, endpoint protection, ethical hacking, and web vulnerability testing methodologies.</p>
 <div class="tags">
 <span class="tag">Linux</span>
 <span class="tag">Burp Suite</span>
 <span class="tag">Nmap</span>
 <span class="tag">Security</span>
 </div>
-
 <div class="project-buttons">
-
-<a href="#" target="_blank" class="btn outline-btn project-btn">
-Code
-</a>
-
-<a href="#" target="_blank" class="btn primary-btn project-btn">
-Live
-</a>
-
+<a href="#" class="btn outline-btn project-btn"><i class="fab fa-github"></i> Code</a>
+<a href="#" class="btn primary-btn project-btn developing-btn" style="opacity:0.6; cursor:not-allowed;"><i class="fas fa-external-link-alt"></i> Coming Soon</a>
+</div>
 </div>
 
-</div>
-
-<!-- ================= BHUMI AI (UPDATED WITH LIVE STATUS & CORRECT LINK) ================= -->
-
-<div class="glass project">
-
-<h3>Bhumi-AI <span class="live-badge">● LIVE</span></h3>
-
-<p>
-Bhumi-AI is a futuristic AI-powered platform focused on smart interactions, modern frontend UI/UX, and scalable architecture. Frontend is successfully deployed and fully functional with real-time AI capabilities, intelligent automation, and a sleek responsive interface.
-</p>
-
+<!-- Project 4: Bhumi-AI - FULLY LIVE -->
+<div class="glass project" data-aos="fade-up" data-aos-delay="300">
+<h3>
+Bhumi-AI 
+<span class="live-badge">
+<i class="fas fa-circle"></i> LIVE
+</span>
+</h3>
+<p>Bhumi-AI is a futuristic AI-powered platform focused on smart interactions, modern frontend UI/UX, and scalable architecture. The frontend is successfully deployed on Vercel with a sleek, responsive interface. Backend services and advanced AI integrations are currently under active development.</p>
 <div class="tags">
 <span class="tag">React</span>
-<span class="tag">AI</span>
-<span class="tag">Frontend</span>
+<span class="tag">AI/ML</span>
 <span class="tag">Vercel</span>
+<span class="tag">Frontend</span>
 <span class="tag">Live</span>
 </div>
-
 <div class="project-buttons">
-
-<a href="https://github.com/AbhayTechCoder/bhumi-ai" target="_blank" class="btn outline-btn project-btn">
-<i class="fab fa-github"></i> Code
-</a>
-
-<a href="https://bhumi-ai-eight.vercel.app" target="_blank" class="btn primary-btn project-btn">
-<i class="fas fa-external-link-alt"></i> Live Project
-</a>
-
+<a href="https://github.com/AbhayTechCoder/bhumi-ai" target="_blank" class="btn outline-btn project-btn"><i class="fab fa-github"></i> View Code</a>
+<a href="https://bhumi-ai-eight.vercel.app" target="_blank" class="btn primary-btn project-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
 </div>
-
 </div>
-
-<!-- ================= NEW PROJECT: BHUMI AI PREMIUM (Duplicate Entry Avoided, only one Bhumi-AI with full live details) ================= -->
-<!-- Note: Only the above Bhumi-AI project is added as requested with live status. The earlier Bhumi-AI placeholder is replaced by this polished version -->
 
 </div>
 
@@ -896,7 +1091,7 @@ Contact Me
 </section>
 
 <footer>
-© 2026 Abhay Chaudhary • Designed With Passion & Code
+© 2026 Abhay Chaudhary • Technical Support Engineer • Designed With Passion & Code
 </footer>
 
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
@@ -907,7 +1102,8 @@ Contact Me
 
 AOS.init({
 duration:1000,
-once:true
+once:true,
+offset:100
 });
 
 window.addEventListener('load',()=>{
@@ -953,7 +1149,7 @@ particlesJS('particles-js',{
 
 particles:{
 number:{
-value:60
+value:80
 },
 color:{
 value:'#ffffff'
@@ -962,14 +1158,16 @@ shape:{
 type:'circle'
 },
 opacity:{
-value:.25
+value:.2
 },
 size:{
-value:2.5
+value:2
 },
 move:{
 enable:true,
-speed:1
+speed:0.8,
+direction:'none',
+random:true
 }
 },
 
@@ -987,4 +1185,5 @@ mode:'repulse'
 </script>
 
 </body>
+
 </html>
